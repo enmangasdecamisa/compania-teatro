@@ -39,7 +39,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(next, 8000);
     return () => clearInterval(timer);
   }, [next, isPaused]);
 

@@ -427,3 +427,15 @@ Las fotografías adicionales de ensayos quedan pendientes de incorporación hast
 ### Resultado de la verificación
 
 El primer slide ahora utiliza `/manus-storage/1000241018_fd53294e.jpg`, una fotografía grupal de 1920 × 1280 px. En desktop se visualiza el grupo sobre el escenario con el título «En Mangas de Camisa», el subtítulo y el botón claramente legibles gracias al overlay existente. `pnpm check` y `pnpm build` finalizaron correctamente; la adaptación móvil se revisó sin detectar desbordes.
+
+
+## Velocidad del carrusel del encabezado
+
+- [x] Ralentizar el cambio automático de slides de 6 a 8 segundos.
+- [x] Mantener la pausa al pasar el cursor y los controles manuales.
+- [x] Validar TypeScript, build y vistas desktop/móvil.
+- [x] Guardar checkpoint de la actualización.
+
+### Resultado de la verificación
+
+El carrusel del encabezado ahora cambia automáticamente cada 8 segundos en lugar de cada 6, dando más tiempo para leer los títulos, subtítulos y llamados a la acción. Se conservaron la pausa por interacción y la navegación manual. `pnpm check` y `pnpm build` finalizaron correctamente; las vistas desktop y móvil se revisaron sin detectar desbordes.
