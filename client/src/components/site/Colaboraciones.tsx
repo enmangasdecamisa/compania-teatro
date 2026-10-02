@@ -62,6 +62,15 @@ export default function Colaboraciones() {
           </div>
         </div>
 
+        <div className="mb-12 border-2 border-theater-orange bg-theater-orange/10 px-6 py-5 md:px-8 md:py-6" role="status">
+          <p className="font-display font-bold text-theater-orange text-sm md:text-base uppercase tracking-[0.18em]">
+            Sección en construcción
+          </p>
+          <p className="font-body text-white/85 text-base md:text-lg leading-relaxed mt-2">
+            Próximamente podrás conocer las formas de colaborar y sumarte al crecimiento de la compañía.
+          </p>
+        </div>
+
         {/* Collaboration types */}
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16">
           {colaboraciones.map((collab, index) => {

@@ -439,3 +439,16 @@ El primer slide ahora utiliza `/manus-storage/1000241018_fd53294e.jpg`, una foto
 ### Resultado de la verificación
 
 El carrusel del encabezado ahora cambia automáticamente cada 8 segundos en lugar de cada 6, dando más tiempo para leer los títulos, subtítulos y llamados a la acción. Se conservaron la pausa por interacción y la navegación manual. `pnpm check` y `pnpm build` finalizaron correctamente; las vistas desktop y móvil se revisaron sin detectar desbordes.
+
+
+## Aviso en «Colaboraciones y apoyo»
+
+- [x] Añadir una leyenda visible de sección en construcción.
+- [x] Indicar que próximamente se habilitarán las formas de colaborar.
+- [x] Verificar el texto en el preview y revisar vistas desktop/móvil.
+- [x] Validar TypeScript y build de producción.
+- [x] Guardar checkpoint de la actualización.
+
+### Resultado de la verificación
+
+La sección «Colaboraciones y apoyo» ahora muestra, antes de las tarjetas, un aviso destacado con borde y texto naranja: «Sección en construcción» y «Próximamente podrás conocer las formas de colaborar y sumarte al crecimiento de la compañía». El texto fue confirmado en el preview; `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop y móvil no presentan desbordes.
