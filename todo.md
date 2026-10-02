@@ -452,3 +452,16 @@ El carrusel del encabezado ahora cambia automáticamente cada 8 segundos en luga
 ### Resultado de la verificación
 
 La sección «Colaboraciones y apoyo» ahora muestra, antes de las tarjetas, un aviso destacado con borde y texto naranja: «Sección en construcción» y «Próximamente podrás conocer las formas de colaborar y sumarte al crecimiento de la compañía». El texto fue confirmado en el preview; `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop y móvil no presentan desbordes.
+
+
+## Aviso en «Membresía»
+
+- [x] Añadir una leyenda visible de sección en construcción.
+- [x] Indicar que próximamente se habilitarán los niveles de membresía.
+- [x] Verificar el texto en el preview y revisar vistas desktop/móvil.
+- [x] Validar TypeScript y build de producción.
+- [x] Guardar checkpoint de la actualización.
+
+### Resultado de la verificación
+
+La sección «Amigos de la Comunidad» —Membresía— ahora muestra antes de las tarjetas un aviso destacado: «Sección en construcción» y «Próximamente podrás conocer los niveles de membresía y sumarte al crecimiento de la compañía». El texto fue confirmado en el preview; `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop y móvil no presentan desbordes.

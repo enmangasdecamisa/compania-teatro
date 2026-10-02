@@ -77,6 +77,15 @@ export default function AmigosDeComun() {
           </div>
         </div>
 
+        <div className="mb-12 border-2 border-theater-orange-strong bg-theater-orange/10 px-6 py-5 md:px-8 md:py-6" role="status">
+          <p className="font-display font-bold text-theater-orange-strong text-sm md:text-base uppercase tracking-[0.18em]">
+            Sección en construcción
+          </p>
+          <p className="font-body text-gray-700 text-base md:text-lg leading-relaxed mt-2">
+            Próximamente podrás conocer los niveles de membresía y sumarte al crecimiento de la compañía.
+          </p>
+        </div>
+
         {/* Membership tiers */}
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16">
           {beneficios.map((tier, index) => {
