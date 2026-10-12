@@ -58,7 +58,7 @@ export default function Testimonios() {
             Acto II
           </p>
           <h2 className="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl uppercase text-theater-black leading-tight" data-stagger="1">
-            Voces de nuestra <br />
+            <span className="text-theater-black" style={{ color: "#111111" }}>Voces de nuestra</span> <br />
             <span className="text-theater-red">comunidad</span>
           </h2>
         </div>

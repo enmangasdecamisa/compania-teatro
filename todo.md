@@ -465,3 +465,18 @@ La sección «Colaboraciones y apoyo» ahora muestra, antes de las tarjetas, un 
 ### Resultado de la verificación
 
 La sección «Amigos de la Comunidad» —Membresía— ahora muestra antes de las tarjetas un aviso destacado: «Sección en construcción» y «Próximamente podrás conocer los niveles de membresía y sumarte al crecimiento de la compañía». El texto fue confirmado en el preview; `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop y móvil no presentan desbordes.
+
+
+## Enlace institucional, logo del footer y Voces de la comunidad
+
+- [x] Convertir el logo de Don Bosco Ramos Mejía del encabezado en un enlace a `https://www.donboscoramos.edu.ar/`.
+- [x] Reemplazar en el footer el logo genérico por el logo de En Mangas de Camisa.
+- [x] Corregir el contraste de «Voces de nuestra» con color oscuro explícito sobre fondo blanco.
+- [x] Verificar el enlace institucional con HTTP 200.
+- [x] Confirmar en el DOM el href, el asset del footer y el color computado `rgb(17, 17, 17)` del título.
+- [x] Validar TypeScript, build y vistas desktop/móvil.
+- [x] Guardar checkpoint de la actualización.
+
+### Resultado de la verificación
+
+El logo de Don Bosco Ramos Mejía abre el sitio institucional en una pestaña nueva; la URL respondió HTTP 200. El footer ahora usa `logo-en-mangas_9a6d9062.jpg` con texto alternativo «Logo En Mangas de Camisa». En «Voces de nuestra», el color computado quedó en `rgb(17, 17, 17)`, garantizando legibilidad sobre el fondo blanco. `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop y móvil no presentan desbordes.

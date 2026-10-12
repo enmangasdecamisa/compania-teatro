@@ -129,14 +129,20 @@ export default function Navbar() {
           </a>
 
           {/* Salesianos logo desktop */}
-          <div className="hidden lg:flex items-center gap-2 px-4 border-l border-white/20">
+          <a
+            href="https://www.donboscoramos.edu.ar/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visitar Don Bosco Ramos Mejía"
+            className="hidden lg:flex items-center gap-2 px-4 border-l border-white/20 group"
+          >
             <img
               src="/manus-storage/logo-salesianos_9f4cdeee.webp"
               alt="Salesianos Don Bosco Ramos Mejía"
               className="h-8 w-8 transition-transform duration-300 hover:scale-110"
             />
-            <span className="font-body text-white/60 text-xs uppercase tracking-wider">Ramos Mejía</span>
-          </div>
+            <span className="font-body text-white/60 group-hover:text-white text-xs uppercase tracking-wider transition-colors duration-200">Ramos Mejía</span>
+          </a>
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex items-center gap-1">

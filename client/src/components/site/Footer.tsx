@@ -42,8 +42,8 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src="/manus-storage/logo-teatro_a3fc7bbd.png"
-                alt="Logo"
+                src="/manus-storage/logo-en-mangas_9a6d9062.jpg"
+                alt="Logo En Mangas de Camisa"
                 className="h-12 w-12"
               />
               <div>
