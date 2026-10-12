@@ -67,7 +67,7 @@ export default function AmigosDeComun() {
             <p className="reveal font-display text-theater-orange-strong text-sm uppercase tracking-[0.3em] mb-4" data-stagger="0">
               Acto XIV
             </p>
-            <h2 className="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl uppercase text-theater-black leading-tight mb-6" data-stagger="1" style={{color: '#f9ba71'}}>
+            <h2 className="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl uppercase text-theater-black leading-tight mb-6" data-stagger="1">
               Amigos de la <span className="text-theater-orange-strong">Comunidad</span>
             </h2>
             <p className="reveal font-body text-gray-600 text-base md:text-lg max-w-2xl mx-auto" data-stagger="2">
@@ -115,7 +115,7 @@ export default function AmigosDeComun() {
                   </div>
 
                   {/* Title */}
-                  <h3 className={`font-display font-bold text-2xl uppercase mb-2 ${tier.featured ? "text-white" : "text-theater-black"}`} style={{ color: '#de8c8c' }}>
+                  <h3 className={`font-display font-bold text-2xl uppercase mb-2 ${tier.featured ? "text-white" : "text-theater-black"}`}>
                     {tier.nivel}
                   </h3>
                   <p className={`font-body text-sm mb-6 ${tier.featured ? "text-white/70" : "text-gray-600"}`}>

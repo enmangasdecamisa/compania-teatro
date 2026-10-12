@@ -32,7 +32,7 @@ export default function Convocatoria() {
             <div className="h-14 w-14 bg-theater-red flex items-center justify-center rounded-sm mb-6 group-hover:scale-110 transition-transform duration-300">
               <Users className="h-7 w-7 text-white" />
             </div>
-            <h3 className="font-display font-bold text-2xl uppercase text-theater-black mb-4" style={{color: '#d98787'}}>
+            <h3 className="font-display font-bold text-2xl uppercase text-theater-black mb-4">
               Actuación integral
             </h3>
             <p className="font-body text-gray-600 text-sm leading-relaxed mb-6">
@@ -66,7 +66,7 @@ export default function Convocatoria() {
             <div className="h-14 w-14 bg-theater-teal flex items-center justify-center rounded-sm mb-6 group-hover:scale-110 transition-transform duration-300">
               <Zap className="h-7 w-7 text-white" />
             </div>
-            <h3 className="font-display font-bold text-2xl uppercase text-theater-black mb-4" style={{color: '#a2d0fb'}}>
+            <h3 className="font-display font-bold text-2xl uppercase text-theater-black mb-4">
               OFICIOS TEATRALES /EQUIPO TÉCNICO
             </h3>
             <p className="font-body text-gray-600 text-sm leading-relaxed mb-6">
@@ -100,7 +100,7 @@ export default function Convocatoria() {
             <div className="h-14 w-14 bg-theater-orange flex items-center justify-center rounded-sm mb-6 group-hover:scale-110 transition-transform duration-300">
               <Heart className="h-7 w-7 text-white" />
             </div>
-            <h3 className="font-display font-bold text-2xl uppercase text-theater-black mb-4" style={{color: '#f9b985'}}>
+            <h3 className="font-display font-bold text-2xl uppercase text-theater-black mb-4">
               Voluntariado
             </h3>
             <p className="font-body text-gray-600 text-sm leading-relaxed mb-6">

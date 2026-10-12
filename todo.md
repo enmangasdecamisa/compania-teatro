@@ -480,3 +480,18 @@ La sección «Amigos de la Comunidad» —Membresía— ahora muestra antes de l
 ### Resultado de la verificación
 
 El logo de Don Bosco Ramos Mejía abre el sitio institucional en una pestaña nueva; la URL respondió HTTP 200. El footer ahora usa `logo-en-mangas_9a6d9062.jpg` con texto alternativo «Logo En Mangas de Camisa». En «Voces de nuestra», el color computado quedó en `rgb(17, 17, 17)`, garantizando legibilidad sobre el fondo blanco. `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop y móvil no presentan desbordes.
+
+
+## Auditoría de contraste tipográfico en fondos blancos
+
+- [x] Definir globalmente `.text-theater-black` como `#0A0A0A`.
+- [x] Corregir «Nuestro equipo» y «Convocatoria 2027» mediante el token oscuro global.
+- [x] Eliminar colores inline demasiado claros en los títulos de las tarjetas de Convocatoria.
+- [x] Eliminar el color claro inline de los títulos de Membresía y de los autores de Voces.
+- [x] Confirmar que «Voces de nuestra» mantiene color oscuro explícito.
+- [x] Validar colores computados, TypeScript, build y vistas desktop/móvil.
+- [x] Guardar checkpoint de la actualización.
+
+### Resultado de la verificación
+
+Se corrigió la causa general de los textos casi invisibles: `.text-theater-black` no estaba definido como utilidad de marca. Ahora los títulos que usan esa clase se renderizan en `rgb(10, 10, 10)`. La medición del DOM confirmó «Convocatoria 2027» y «Nuestro equipo» en negro, «Voces de nuestra» en `rgb(17, 17, 17)`, y sus acentos en colores más oscuros. También se retiraron colores inline claros de las tarjetas de Convocatoria, Membresía y autores de Voces. `pnpm check` y `pnpm build` finalizaron correctamente; las vistas desktop y móvil se revisaron sin desbordes.
