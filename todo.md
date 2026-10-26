@@ -495,3 +495,18 @@ El logo de Don Bosco Ramos Mejía abre el sitio institucional en una pestaña nu
 ### Resultado de la verificación
 
 Se corrigió la causa general de los textos casi invisibles: `.text-theater-black` no estaba definido como utilidad de marca. Ahora los títulos que usan esa clase se renderizan en `rgb(10, 10, 10)`. La medición del DOM confirmó «Convocatoria 2027» y «Nuestro equipo» en negro, «Voces de nuestra» en `rgb(17, 17, 17)`, y sus acentos en colores más oscuros. También se retiraron colores inline claros de las tarjetas de Convocatoria, Membresía y autores de Voces. `pnpm check` y `pnpm build` finalizaron correctamente; las vistas desktop y móvil se revisaron sin desbordes.
+
+
+## Proyecto del año: difusión, fotos y comentarios
+
+- [x] Subir el poster aportado de Alicia Maravilla al almacenamiento del proyecto.
+- [x] Incorporar el poster en la sección «Difusión» del Proyecto del año, con texto alternativo y pie descriptivo.
+- [x] Abrir la sección 04 «Fotos de funciones», preparada para sumar imágenes de cada función.
+- [x] Abrir la sección 05 «Comentarios del público», con formulario accesible de nombre y comentario.
+- [x] Mostrar en la sesión los comentarios enviados desde el formulario, con confirmación visible.
+- [x] Validar TypeScript, build, DOM, URL del poster y vistas desktop/móvil.
+- [x] Guardar checkpoint de la actualización.
+
+### Resultado de la verificación
+
+El poster `1_43707e70.png` responde con HTTP 200 y aparece dentro de «Difusión». El Proyecto del año ahora incluye las cinco secciones: Ensayos, Difusión, Funciones, Fotos de funciones y Comentarios del público. La cuarta sección queda lista para incorporar fotografías reales cuando se compartan. La quinta incluye un formulario funcional durante la sesión y una lista de comentarios agregados; para que los comentarios sean persistentes y públicos entre dispositivos será necesario conectar posteriormente un backend o servicio externo de moderación. `pnpm check` y `pnpm build` finalizaron correctamente, y las vistas desktop/móvil fueron revisadas sin desbordes.

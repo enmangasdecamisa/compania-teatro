@@ -1,8 +1,8 @@
 // Dirección visual: archivo audiovisual en tarjetas oscuras, galería editorial de producciones y proyecto anual como pieza destacada.
 // La galería se amplía agregando objetos a galeriaProducciones; no requiere modificar la lógica del carrusel.
 
-import { useEffect, useState } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Pause, Play, PlayCircle } from "lucide-react";
+import { useEffect, useState, type FormEvent } from "react";
+import { ArrowRight, Camera, ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Pause, Play, PlayCircle, Send } from "lucide-react";
 
 const obras = [
   {
@@ -188,7 +188,14 @@ const proyecto = {
     "Alicia tiene diecisiete años, el celular sin batería y la sensación de que el mundo gira para otro lado. Cuando un desconocido la arrastra más allá del andén de siempre, cae en un territorio que se parece al suyo pero con algo corrido: los tiempos no funcionan, las reglas cambian solas, y cada habitante del lugar tiene una pregunta que ella no sabe responder.\n\nEntre el ruido y el silencio, entre crecer demasiado y achicarse de más, Alicia va descubriendo que la pregunta más difícil no tiene que ver con quien elige dar el próximo paso.\n\nUn musical del Oeste bonaerense.",
   materiales: [
     { numero: "01", titulo: "Ensayos", descripcion: "Fragmentos del proceso de creación.", funciones: [] },
-    { numero: "02", titulo: "Difusión", descripcion: "Noticias, afiches y convocatorias.", funciones: [] },
+    {
+      numero: "02",
+      titulo: "Difusión",
+      descripcion: "Noticias, afiches y convocatorias.",
+      funciones: [],
+      image: "/manus-storage/1_43707e70.png",
+      imageAlt: "Poster de Alicia Maravilla con las fechas de funciones del 17, 24 y 31 de octubre",
+    },
     {
       numero: "03",
       titulo: "Funciones",
@@ -220,6 +227,20 @@ const proyecto = {
         },
       ],
     },
+    {
+      numero: "04",
+      titulo: "Fotos de funciones",
+      descripcion: "Un espacio para sumar imágenes de cada función y compartir la experiencia con la comunidad.",
+      funciones: [],
+      tipo: "fotos",
+    },
+    {
+      numero: "05",
+      titulo: "Comentarios del público",
+      descripcion: "Próximamente podrás compartir qué te pasó durante la función.",
+      funciones: [],
+      tipo: "comentarios",
+    },
   ],
 };
 
@@ -242,6 +263,10 @@ export default function Obras() {
   const [manualPause, setManualPause] = useState(false);
   const [isHoveringGallery, setIsHoveringGallery] = useState(false);
   const [isFocusedGallery, setIsFocusedGallery] = useState(false);
+  const [comentarioNombre, setComentarioNombre] = useState("");
+  const [comentarioTexto, setComentarioTexto] = useState("");
+  const [comentarios, setComentarios] = useState<Array<{ nombre: string; texto: string }>>([]);
+  const [comentarioEnviado, setComentarioEnviado] = useState(false);
   const galeriaActiva = galeriaProducciones[galeriaIndex];
   const galeriaEnReproduccion = !manualPause && !isHoveringGallery && !isFocusedGallery;
 
@@ -259,6 +284,18 @@ export default function Obras() {
 
   const mostrarSiguiente = () => {
     setGaleriaIndex((current) => (current + 1) % galeriaProducciones.length);
+  };
+
+  const publicarComentario = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!comentarioNombre.trim() || !comentarioTexto.trim()) return;
+    setComentarios((actuales) => [
+      ...actuales,
+      { nombre: comentarioNombre.trim(), texto: comentarioTexto.trim() },
+    ]);
+    setComentarioNombre("");
+    setComentarioTexto("");
+    setComentarioEnviado(true);
   };
 
   return (
@@ -514,6 +551,83 @@ export default function Obras() {
                           </div>
                         </div>
                       ))}
+                    </div>
+                  )}
+                  {"image" in material && material.image && (
+                    <figure className="mt-5 overflow-hidden border border-white/10 bg-black/30">
+                      <img
+                        src={material.image}
+                        alt={material.imageAlt}
+                        className="mx-auto max-h-[520px] w-full object-contain"
+                      />
+                      <figcaption className="px-3 py-2 font-body text-[11px] text-white/50">
+                        Material de difusión · Alicia Maravilla
+                      </figcaption>
+                    </figure>
+                  )}
+                  {"tipo" in material && material.tipo === "fotos" && (
+                    <div className="mt-5 border border-dashed border-theater-teal/60 bg-theater-teal/10 p-5 text-center">
+                      <Camera className="mx-auto mb-3 h-8 w-8 text-theater-teal" aria-hidden="true" />
+                      <p className="font-display text-sm uppercase tracking-wider text-white">
+                        Galería lista para crecer
+                      </p>
+                      <p className="mt-2 font-body text-xs leading-relaxed text-white/60">
+                        Aquí vamos a sumar las fotos de cada función cuando estén disponibles.
+                      </p>
+                    </div>
+                  )}
+                  {"tipo" in material && material.tipo === "comentarios" && (
+                    <div className="mt-5 border border-white/10 bg-black/20 p-4">
+                      <div className="mb-4 flex items-center gap-2">
+                        <MessageCircle className="h-4 w-4 text-theater-orange" aria-hidden="true" />
+                        <p className="font-display text-xs uppercase tracking-wider text-theater-orange">
+                          Compartí tu experiencia
+                        </p>
+                      </div>
+                      <form onSubmit={publicarComentario} className="space-y-3">
+                        <label className="sr-only" htmlFor="comentario-nombre">Tu nombre</label>
+                        <input
+                          id="comentario-nombre"
+                          value={comentarioNombre}
+                          onChange={(event) => setComentarioNombre(event.target.value)}
+                          placeholder="Tu nombre"
+                          className="w-full border border-white/15 bg-white/5 px-3 py-2 font-body text-sm text-white placeholder:text-white/40 focus:border-theater-orange focus:outline-none"
+                          required
+                        />
+                        <label className="sr-only" htmlFor="comentario-texto">Tu comentario</label>
+                        <textarea
+                          id="comentario-texto"
+                          value={comentarioTexto}
+                          onChange={(event) => setComentarioTexto(event.target.value)}
+                          placeholder="¿Qué te pasó durante la función?"
+                          rows={3}
+                          className="w-full resize-y border border-white/15 bg-white/5 px-3 py-2 font-body text-sm text-white placeholder:text-white/40 focus:border-theater-orange focus:outline-none"
+                          required
+                        />
+                        <button
+                          type="submit"
+                          className="inline-flex items-center gap-2 bg-theater-orange px-4 py-2 font-display text-xs uppercase tracking-wider text-theater-black transition-transform hover:-translate-y-0.5"
+                        >
+                          Dejar comentario <Send className="h-3.5 w-3.5" />
+                        </button>
+                      </form>
+                      {comentarioEnviado && (
+                        <p className="mt-3 font-body text-xs text-theater-orange" role="status">
+                          Gracias. Tu comentario quedó visible en esta sesión.
+                        </p>
+                      )}
+                      {comentarios.length > 0 && (
+                        <div className="mt-4 space-y-2 border-t border-white/10 pt-4" aria-label="Comentarios agregados">
+                          {comentarios.map((comentario, index) => (
+                            <blockquote key={`${comentario.nombre}-${index}`} className="border-l-2 border-theater-orange/70 pl-3">
+                              <p className="font-body text-sm leading-relaxed text-white/75">“{comentario.texto}”</p>
+                              <cite className="mt-1 block font-display text-[10px] uppercase tracking-wider text-white/45 not-italic">
+                                {comentario.nombre}
+                              </cite>
+                            </blockquote>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
